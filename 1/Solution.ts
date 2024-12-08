@@ -1,6 +1,5 @@
 import fs from 'node:fs/promises';
-import path, { parse } from 'node:path';
-
+import path from 'node:path';
 
 async function parseInput(): Promise<{ left: number[], right: number[] }> {
     const inputPath = path.resolve(import.meta.dirname, './input.txt');
