@@ -1,4 +1,8 @@
 {
+  "type": "module",
+  "scripts": {
+    "solve": "node --no-warnings --experimental-strip-types"
+  },
   "dependencies": {
     "@types/node": "^22.10.1"
   }

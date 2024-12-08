@@ -17,9 +17,7 @@
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
             nodejs_22
-            # Common development tools
             nodePackages.npm
-            nodePackages.yarn
             git
           ];
 
