@@ -64,6 +64,49 @@ async function Solution() {
         } else if (matrix[i + di][j + dj] === '#') {
             matrix[i][j] = rotateRight[matrix[i][j]  as typeof possibleLooking[number]]
         } else {
+
+            {
+                const newMatrix = structuredClone(originalMatrix);
+
+                    while(true) {
+                        const position = newMatrix[i][j] as typeof possibleLooking[number];
+                        const di = delta[position].i;
+                        const dj = delta[position].j;
+                        if ([-1, newMatrix.length].includes(i + di) || [-1, newMatrix[0].length].includes(j + dj)) {
+                            newMatrix[i][j] = 'X';
+                            break;
+                        } else if (newMatrix[i + di][j + dj] === '#') {
+                            newMatrix[i][j] = rotateRight[newMatrix[i][j]  as typeof possibleLooking[number]]
+                        } else {
+
+
+                            newMatrix[i + di][j + dj] = newMatrix[i][j]
+                            newMatrix[i][j] = 'X';
+                            i += di;
+                            j += dj;
+                        }
+                        // await printOutput(matrix, 100); // Makes it easy to visualize
+                    }
+
+            }
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             matrix[i + di][j + dj] = matrix[i][j]
             matrix[i][j] = 'X';
             i += di;
